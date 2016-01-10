@@ -29,6 +29,13 @@ module.exports = {
       test: /\.js$/,
       loaders: ['babel'],
       include: path.join(__dirname, 'src')
+    },
+    {
+      test: /\.sass$/,
+      loaders: ['style', 'css', 'sass']
     }]
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx'] 
   }
 };
