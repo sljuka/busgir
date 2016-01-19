@@ -1,20 +1,20 @@
-import createBrowserHistory from 'history/lib/createBrowserHistory';
-import Home from './components/dummies/home';
-import React from 'react';
-import Revolting from './components/dummies/revolting';
-import TodoPage from './components/todos'
-import Voting from './components/dummies/voting';
-import {App} from './app';
-import {IndexRoute, Router, Route} from 'react-router';
-import {render} from 'react-dom';
+import createBrowserHistory from 'history/lib/createBrowserHistory'
+import Home from './features/voting/home'
+import React from 'react'
+import Revolting from './features/voting/revolting'
+import TodoPage from './features/todos'
+import Voting from './features/voting/voting'
+import {App} from './app'
+import {IndexRoute, Router, Route} from 'react-router'
+import {render} from 'react-dom'
 
 render((
   <Router history={createBrowserHistory()}>
-    <Route path='/' name='voting' component={App}>
-      <IndexRoute component={Home} />
-      <Route name='vote' path='vote' component={Voting} />
+    <Route path='/' component={App}>
+      <IndexRoute component={Voting} />
       <Route name='revolt' path='revolt' component={Revolting} />
       <Route name='todos' path='todos' component={TodoPage} />
+      <Route name='counter' path='counter' component={Home} />
     </Route>
   </Router>
 ), document.getElementById('root'))

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { NICE, SUPER_NICE } from '../../colors';
+import { NICE, SUPER_NICE } from './colors';
 import {Link} from 'react-router'
 import '../../../assets/dummies.sass'
 
@@ -37,7 +37,7 @@ export default class Home extends Component {
       <div>
         <Counter increment={1} color={NICE} />
         <Counter increment={5} color={SUPER_NICE} />
-        <Link to='vote'>text</Link>
+        <Link to='/'>text</Link>
       </div>
     )
   }

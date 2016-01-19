@@ -1,8 +1,8 @@
-import {combineReducers} from 'redux'
-import {todos} from './todos';
-import {visibilityFilter} from './visibility_filter';
+import {combineReducers} from 'redux-immutablejs';
+import {processes} from '../features/processes/core';
+import {todos} from '../features/todos/core';
 
 export const busgirApp = combineReducers({
   todos,
-  visibilityFilter
+  processes
 });

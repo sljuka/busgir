@@ -1,6 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { setVisibilityFilter } from '../../actions/todos';
+import {connect} from 'react-redux';
+import {setFilter} from '../../features/todos/actions';
 import Link from '../link';
 
 const mapStateToProps = (
@@ -8,7 +8,7 @@ const mapStateToProps = (
   ownProps
 ) => {
   return {
-    active: ownProps.filter === state.visibilityFilter
+    active: ownProps.filter === state.getIn(['todos', 'filter'])
   };
 };
 
@@ -19,7 +19,7 @@ const mapDispatchToProps = (
   return {
     onClick: () => {
       dispatch(
-        setVisibilityFilter(ownProps.filter)
+        setFilter(ownProps.filter)
       );
     }
   };
